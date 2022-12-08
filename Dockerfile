@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
+FROM amd64/openjdk:11-slim as jdkbase
+FROM jdkbase
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
